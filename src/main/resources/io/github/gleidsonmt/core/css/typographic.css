@@ -1,0 +1,64 @@
+
+.label:disabled .text,
+.label .text:disabled,
+GridPane .text:disabled {
+    -fx-opacity: 0.5;
+}
+
+.text, Text, .label .text {
+    -fx-fill: -text-color;
+}
+
+.text-10, .btn-small, .text-small, .text-small > .text {
+  -fx-font-size : 10px;
+}
+
+.text-12, .h6, .h6 > .text {
+    -fx-font-size : 12px;
+}
+
+.text-14, .h5, .h5 > .text {
+  -fx-font-size : 14px;
+}
+
+.text-18, .h4, .h4 > .text, .subtitle {
+  -fx-font-size : 18px;
+}
+
+.text-24, .h3, .h3 > .text {
+  -fx-font-size : 24px;
+}
+
+.text-30, .h2, .h2 > .text{
+  -fx-font-size : 30px;
+}
+
+.text-36, .h1, .h1 > .text {
+  -fx-font-size : 36px;
+}
+
+.text-38 {
+  -fx-font-size : 38px;
+}
+
+.text-42 {
+  -fx-font-size : 42px;
+}
+
+.text-48 {
+  -fx-font-size : 48px;
+}
+
+.text-accent .text,
+.text-accent {
+    -fx-text-fill: -fx-accent;
+    -fx-fill: -fx-accent;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+
+.bolder {
+    -fx-font-weight: bolder;
+}

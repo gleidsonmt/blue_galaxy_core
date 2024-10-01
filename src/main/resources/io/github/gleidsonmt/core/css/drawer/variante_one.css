@@ -1,0 +1,145 @@
+
+#drawer {
+    -fx-padding: 5px;
+    -fx-effect: none;
+    -fx-border-color: -medium-gray;
+    -fx-border-width: 0px 1px 0px 0px;
+    -fx-background-color: -fx-background;
+}
+
+#drawer .drawer-item {
+    -fx-background-radius: 6px;
+}
+
+#drawer .drawer-item:hover {
+    -fx-background-color: derive(-fx-accent, 110%);
+}
+
+#drawer .drawer-item:selected {
+    -fx-background-color: #0084ff;
+    -fx-text-fill: white;
+}
+
+#drawer .drawer-item:selected .text,
+#drawer .drawer-item:selected:hover .text {
+    -fx-fill: white;
+}
+
+#drawer .drawer-item .text {
+    -fx-fill: -text-color;
+}
+
+#drawer .drawer-item:hover .text {
+    -fx-fill: -fx-accent;
+}
+
+#drawer .drawer-menu {
+    -fx-background-color: transparent;
+}
+
+#drawer .drawer-item,
+#drawer .titled-pane .title {
+    -fx-pref-height: 40px;
+    -fx-min-height: 40px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-color;
+    -fx-font-weight: bold;
+}
+
+#drawer .titled-pane .title .text {
+    -fx-fill: -text-color;
+}
+
+#drawer .titled-pane .content {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+    -fx-padding: 0px 15px 0px 0px;
+}
+
+#drawer .titled-pane .content .container {
+
+    -fx-padding: 10px 10px 10px 10px;
+}
+
+#drawer > .module-selected > .title {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+}
+
+#drawer > .module-selected > .title,
+#drawer > .module-selected:focused:expanded > .title,
+#drawer > .module-selected:expanded > .title,
+#drawer > .titled-pane > .title {
+    -fx-padding: 10px;
+}
+
+#drawer > .module-selected:expanded  .title .arrow-button .arrow,
+#drawer > .module-selected  .title .arrow-button .arrow,
+#drawer > .module-selected > .title .text {
+    -fx-fill: white;
+    -fx-background-color: white;
+}
+
+#drawer > .module-selected > .title .icon-container .icon {
+    -fx-fill: white;
+}
+
+.titled-pane .title .arrow-button .arrow {
+    -fx-shape : "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z";
+    -fx-min-width : 12px;
+    -fx-min-height : 12px;
+    -fx-fill: -text-color;
+}
+
+.titled-pane:focused .title .arrow-button .arrow,
+.titled-pane:expanded .title .arrow-button .arrow {
+    -fx-effect : none;
+    -fx-focus-color : transparent;
+}
+
+ .drawer-menu:expanded .title  .arrow-button .arrow {
+  -fx-shape : "M5 13v-2h14v2Z";
+  -fx-max-height : 2px;
+  -fx-min-height : 2px;
+}
+
+#drawer > .module-selected:focused:expanded > .title .arrow {
+      -fx-max-height : 1px;
+      -fx-min-height : 1px;
+}
+
+#drawer .drawer-menu  .drawer-item {
+    -fx-background-color: transparent;
+}
+
+#drawer .drawer-menu  .drawer-item .text {
+    -fx-fill: -text-color;
+}
+
+#drawer .drawer-menu .drawer-item:hover:selected,
+#drawer .drawer-menu .drawer-item:selected:hover,
+#drawer .drawer-menu .drawer-item:selected {
+    -fx-background-color: derive(-fx-accent, 110%);
+}
+
+#drawer .drawer-menu .drawer-item:hover {
+    -fx-background-color: transparent;
+}
+
+#drawer .drawer-menu .drawer-item:hover .text {
+    -fx-fill: -fx-accent;
+}
+
+#drawer .drawer-menu .drawer-item:hover:selected .text {
+    -fx-fill: -fx-accent;
+}
+
+#drawer .drawer-menu .drawer-item:selected .text {
+    -fx-fill: -fx-accent;
+}
+
+.module-item > .title {
+    -fx-background-color: red;
+}

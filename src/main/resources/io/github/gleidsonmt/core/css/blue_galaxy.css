@@ -1,0 +1,321 @@
+/*
+    Created on : 25/10/2022, 08:00:15
+    Author     : Gleidson Neves da Silveira
+*/
+
+.root {
+    /* Layouts */
+    -fx-background : white;
+    -fx-foreground : -light-gray;
+    /* Effect colors */
+    -hover-color : -mint;
+
+    /* Text */
+
+    -text-color : -dark-gray;
+    -inner-color : white;
+    -icon-color : -text-color;
+
+    /* Borders */
+    -box-color : -medium-gray;
+    -box-hover-color : -dark-gray;
+    -box-focus-color : -info;
+
+    -error-color : -grapefruit;
+    -warning-color : -sunflower;
+    -info-color : -info;
+    -success-color : -mint;
+
+    -fx-color: #0084ff;
+    -fx-accent: #0084ff;
+
+}
+
+
+.center-body .viewport,
+.scroll-pane:fitToHeight {
+    -fx-background-color : -fx-background;
+    -fx-border-width : 0px;
+}
+
+/********************************************************
+                        Controls
+*******************************************************/
+
+
+.text {
+}
+
+Text {
+    -fx-fill: -text-color;
+}
+
+.label .text {
+    -fx-fill: -text-color;
+}
+
+.icon {
+    -fx-fill: -text-color;
+}
+
+.hyperlink .text {
+    -fx-fill: -fx-color;
+}
+
+
+
+.toggle-button,
+.button {
+    -fx-min-height: 30px;
+    -fx-background-color: -fx-color;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.toggle-button:armed {
+    -fx-background-color: -fx-color;
+}
+
+.button:pressed {
+    -fx-background-color : derive(-fx-accent, -40%)
+}
+
+.button:focused {
+  -fx-background-color : derive(-fx-accent, -40%), derive(-fx-accent, -40%), -fx-accent;
+}
+
+
+
+/********************************************************
+                        Layout
+*******************************************************/
+
+.titled-pane .title {
+    -fx-pref-height: 33px;
+    -fx-min-height: 30px;
+    -fx-padding: 5px;
+}
+
+
+/*
+    @Tab Pane
+*/
+
+.tab-pane {
+    -fx-tab-min-height: 40px;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label
+{
+    -fx-pref-width : 100px;
+}
+.tab-pane:top .tab-header-area .headers-region .tab .text
+{
+    -fx-fill: -text-color;
+}
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top .text
+{
+    -fx-fill: -fx-accent;
+}
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top
+{
+  -fx-faint-focus-color : transparent;
+  -fx-focus-color : transparent;
+}
+
+.tab-pane .tab-header-area .headers-region .tab:hover .text
+{
+    -fx-fill: -hover-color;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label
+{
+  -fx-font-weight : bold;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label
+{
+}
+
+.tab-pane:top .tab-header-area .tab-header-background
+{
+  -fx-border-width : 0px 0px 1px 0px;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top
+{
+  -fx-border-width : 0px 0px 2px 0px;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top
+{
+  -fx-border-width : 2px 0px 2px 0px;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label
+{
+  -fx-text-fill : -text-color;
+}
+.tab-pane:top .tab-header-area .headers-region .tab:top
+{
+}
+
+.tab-pane:top .tab-header-area .tab-header-background {
+    -fx-background-color : transparent;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top {
+    -fx-border-color : -fx-accent;
+    -fx-border-width : 0px 0px 2px 0px;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top {
+    -fx-border-color : transparent;
+    -fx-background-color : transparent;
+    -fx-border-width : 0px 0px 2px 0px;
+    -fx-border-radius : 2px;
+}
+
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button {
+    -fx-cursor: hand;
+}
+
+.control-buttons-tab .container .tab-down-button {
+    -fx-background-color : -light-gray-2, white;
+    -fx-padding: 5px 10px 10px 10px;
+
+}
+
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button > .arrow {
+    -fx-shape: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z";
+    -fx-background-color: -dark-gray;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top {
+    -fx-cursor: hand;
+}
+
+
+
+/* @ContextMenu */
+.context-menu {
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,.1) , 18, 0 , 0 , 5 );
+    -fx-border-radius : 5px;
+    -fx-background-radius : 5px;
+    -fx-border-width : 1px;
+}
+
+.context-menu .menu-item {
+    -fx-background-radius: 5px;
+
+}
+.context-menu .menu .text,
+.context-menu .menu-item .text
+{
+    -fx-font-size : 10pt;
+}
+
+.context-menu .menu-item:disabled:hover .label .text,
+.context-menu .menu-item:disabled:hover .label {
+    -fx-background-color : transparent;
+    -fx-text-fill : -text-color;
+    -fx-fill : -text-color;
+}
+
+.context-menu .menu-item:disabled:hover,
+.context-menu .menu-item:disabled {
+    -fx-background-color : transparent;
+}
+
+.context-menu {
+    -fx-background-color: white;
+    -fx-border-color: -light-gray-2;
+    -fx-border-style: solid;
+}
+
+.context-menu .separator {
+    -fx-padding: 2 4 2 4;  /*7 16 7 16 */
+}
+
+.context-menu .menu-item .icon
+{
+    -fx-fill : -text-color;
+
+}
+
+.context-menu .menu-item:hover,
+.context-menu .menu-item:hover .label {
+    -fx-background-color : -fx-color;
+    -fx-cursor: hand;
+}
+
+.context-menu .menu-item:hover .icon ,
+.context-menu .menu-item:hover SVGPath
+{
+    -fx-fill : white;
+}
+
+.context-menu .menu-item .label {
+    -fx-padding : 5px;
+}
+
+.context-menu .menu-item .label .text,
+.context-menu .menu-item .icon
+{
+    -fx-padding : 2px;
+}
+
+.context-menu .menu-item .label .text,
+.context-menu .menu-item:selected .left-container .radio,
+.context-menu .radio-menu-item:hover:checked .left-container .radio
+{
+    -fx-background-color : white;
+    -fx-fill : -text-color;
+}
+
+.context-menu .menu-item:focused .label .text {
+    -fx-fill : white;
+}
+
+.radio-menu-item:focused:checked > .left-container > .radio {
+    -fx-background-color: white;
+}
+.radio-menu-item:checked> .left-container > .radio {
+    -fx-shape: "M382-227q-13 0-25.5-5T335-247L160-421q-19-20-18.5-48.5T161-517q20-20 49-20t48 20l124 124 320-321q20-19 48.5-19.5T799-714q20 20 20 49t-20 48L429-247q-9 10-21.5 15t-25.5 5Z";
+    -fx-scale-shape: true;
+    -fx-padding: 6px 7px;
+    -fx-background-color: -dark-gray;
+}
+
+.context-menu .menu-item .left-container .radio SVGPath {
+    -fx-shape : "M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z";
+}
+
+.context-menu .menu-item:hover .label .text {
+    -fx-fill : white;
+}
+
+
+
+.context-menu .menu-item:selected .left-container .radio {
+    -fx-fill : white;
+}
+
+.context-menu:focused:hover .menu-item:selected .left-container .radio,
+.context-menu:hover .menu-item:selected .left-container .radio {
+    -fx-fill : white;
+}
+
+.context-menu .menu-item:pressed,
+.context-menu .menu-item:pressed .label {
+    -fx-background-color : -dark-gray;
+}
+
+.context-menu .menu-item:focused,
+.context-menu .menu-item:focused .label {
+     -fx-background-color : -fx-accent;
+}
+
+.context-menu .menu-item:focused .icon .text {
+    -fx-fill: white;
+}
+
