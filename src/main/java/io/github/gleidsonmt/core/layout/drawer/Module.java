@@ -6,6 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import org.intellij.lang.annotations.Language;
+import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.Contract;
 
 import java.util.Arrays;
 
@@ -37,6 +40,7 @@ public class Module  {
 
     }
 
+    @ApiStatus.Experimental
     public void setAnimated(boolean animated) {
         this.animated = animated;
     }
@@ -65,6 +69,7 @@ public class Module  {
         this.container = container;
     }
 
+    @ApiStatus.Experimental
     public boolean isAnimated() {
         return animated;
     }
@@ -81,6 +86,4 @@ public class Module  {
     public String toString() {
         return getName();
     }
-
-
 }

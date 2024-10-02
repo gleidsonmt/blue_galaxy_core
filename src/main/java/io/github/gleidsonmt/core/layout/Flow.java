@@ -24,7 +24,9 @@ public interface Flow {
 
     void openFromLeft(Region container);
 
-    void slideFromLeft(Region continer);
+    void slideInFromLeft(Region continer);
+
+    void slideOutFromLeft(Region continer);
 
     Timeline reverse();
 

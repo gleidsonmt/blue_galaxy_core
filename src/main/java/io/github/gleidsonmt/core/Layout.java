@@ -56,18 +56,16 @@ public abstract class Layout<T extends Pane> {
 
     protected void openDrawer(Region drawer) {
         wrapper.show();
-        flow.slideFromLeft(drawer);
+        flow.slideInFromLeft(drawer);
         wrapper.setOnClick(e -> {
-            Timeline timeline = flow.reverse();
-            timeline.setOnFinished(ev -> {
-                closeDrawer(drawer);
-                drawer.setTranslateX(0);
-                timeline.setOnFinished(null);
-            });
+            flow.slideOutFromLeft(drawer);
+            wrapper.close();
         });
     }
 
+
     protected void closeDrawer(Region region) {
+        System.out.println("region = " + region);
         flow.remove(region);
         wrapper.close();
     }

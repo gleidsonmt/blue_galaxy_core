@@ -77,7 +77,7 @@ public class IFlow implements Flow {
     }
 
     @Override
-    public void slideFromLeft(Region container) {
+    public void slideInFromLeft(Region container) {
         openFromLeft(container);
 //        container.setTranslateX(0);
         timeline.getKeyFrames().setAll(
@@ -89,6 +89,29 @@ public class IFlow implements Flow {
                 ))
         );
         timeline.setOnFinished(e -> container.setTranslateX(0));
+        timeline.setRate(1);
+        timeline.play();
+    }
+
+    @Override
+    public void slideOutFromLeft(Region container) {
+        if (!root.getChildren().contains(container)){
+            openFromLeft(container);
+        }
+//
+//        container.setTranslateX(0);
+        timeline.getKeyFrames().setAll(
+                new KeyFrame(Duration.ZERO, new KeyValue(
+                        container.translateXProperty(), 0
+                )),
+                new KeyFrame(Duration.millis(200), new KeyValue(
+                        container.translateXProperty(), container.getWidth() * -1
+                ))
+        );
+        timeline.setOnFinished(e -> {
+            root.removeChild(container);
+            container.setTranslateX(0);
+        });
         timeline.setRate(1);
         timeline.play();
     }

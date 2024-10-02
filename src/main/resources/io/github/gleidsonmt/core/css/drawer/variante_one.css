@@ -54,12 +54,11 @@
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-effect: none;
-    -fx-padding: 0px 15px 0px 0px;
+    -fx-padding: 0px 1px 0px 0px;
 }
 
 #drawer .titled-pane .content .container {
-
-    -fx-padding: 10px 10px 10px 10px;
+    -fx-padding: 0px 10px 10px 10px;
 }
 
 #drawer > .module-selected > .title {

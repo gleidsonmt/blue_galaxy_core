@@ -3,6 +3,7 @@ package io.github.gleidsonmt.core.layout.drawer;
 import io.github.gleidsonmt.core.Start;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ObservableList;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -12,6 +13,10 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Unmodifiable;
+import org.jetbrains.annotations.UnmodifiableView;
 
 import java.util.List;
 import java.util.Objects;
@@ -114,7 +119,7 @@ public class Drawer extends VBox {
         if (module.getModules().isEmpty()) {
             this.getChildren().add(createToggle(module));
         } else {
-            TitledPane container  = createPanel(module);
+            TitledPane container  = createPanel(module, true);
             container.getStyleClass().add("module-first");
             this.getChildren().add(container);
             if (!module.getModules().isEmpty()) {
@@ -162,11 +167,11 @@ public class Drawer extends VBox {
         }
     }
 
-    private TitledPane createPanel(Module module) {
+    private @NotNull TitledPane createPanel(Module module) {
         return createPanel(module, false);
     }
 
-    private TitledPane createPanel(Module module, boolean first) {
+    private @NotNull TitledPane createPanel(@NotNull Module module, boolean first) {
         VBox content = new VBox();
         content.getStyleClass().add("container");
         TitledPane titledPane = new TitledPane(module.getName(), content);
@@ -182,7 +187,7 @@ public class Drawer extends VBox {
         titledPane.getStyleClass().add("drawer-menu");
         content.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
 
-        if (!module.isAnimated() ) {
+        if (!module.isAnimated() && !first) {
             ToggleButton b = new ToggleButton(module.getName());
             b.setUserData(module);
             b.getStyleClass().add("drawer-item");
@@ -216,4 +221,5 @@ public class Drawer extends VBox {
     public ObjectProperty<Module> currentModuleProperty() {
         return currentModule;
     }
+
 }
